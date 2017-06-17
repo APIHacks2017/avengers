@@ -1,0 +1,18 @@
+<div class='link_box'>
+
+<div style="">
+<!--   {{collections}}-->
+    <div class="collection_disp" ng-repeat ="col in news track by $index"  >
+        {{col.title}}
+        <a href="{{col.url}}" target="_blank">
+            <img src=" {{col.urlToImage}}" style="width: 100%;" alt="">
+            
+        </a>
+        <br><br>
+    </div>
+    </div>
+</div>
+
+
+
+

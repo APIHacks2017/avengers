@@ -1,0 +1,9 @@
+
+<div class='link_box'>
+  <div style="max-height: 40vh; overflow: scroll">
+        <div class="collection_disp" ng-repeat ="col in waetherHourlyList track by $index"  >
+            <img src=" {{col.icon_url}}" style="width: 20%;">
+            <span style='font-weight: 500; font-size: 12px'>{{col.FCTTIME.civil}} - {{col.condition}}</span>
+        </div>
+    </div>
+</div>

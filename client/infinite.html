@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Chat</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/js/jquery.js"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.js"></script> -->
+    <script type="text/javascript" src="/js/socket.io.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/angular.js"></script>
+    <script src="/js/angular-route.js"></script>
+    <script src="/js/angular-sanitize.js"></script>
+    <!-- <script type="text/javascript" src="/js/data.js"></script> -->
+    <script type="text/javascript" src="/js/script.js"></script>
+
+
+</head>
+
+<body ng-app="webapp" ng-controller="cntrl">
+    <!-- <h1 class="col-md-12"></h1> -->
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1 col-xs-12 well" style="padding: 0px;background:#f0f0f0;    height: 100vh;">
+            <div class="col-xs-12 title-box" style="height:10vh;">
+                <h2 class='title' style="text-align: center;">Infinite Messenger</h2>
+            </div>
+            <div class="col-md-12" style="margin-top:10vh;    height: 70vh;">
+
+                <div id="chatArea" disabled class="col-md-12" style=""></div>
+            </div>
+
+            <br>
+            <hr>
+            <div class="col-md-12" style="">
+                   <div class="col-xs-10">
+                    <input id="chatInput" type="text" class="col-md-12 col-xs-12 form-control" style="padding: 0px;height: 40px;margin: 0px;" />
+                       
+                   </div>
+                   <div class="col-xs-2">
+                    <button id="sendButton" type="button" class="btn btn-success row" style="height:40px;"><span class="glyphicon glyphicon-send" aria-hidden="true"></span></button>
+       
+                   </div>
+                
+            </div>
+
+        </div>
+
+
+        <br>
+        <hr>
+
+    </div>
+
+
+</body>
+
+</html>

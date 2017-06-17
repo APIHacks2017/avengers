@@ -1,0 +1,15 @@
+<div class='link_box'>
+    <div style="max-height: 40vh; overflow: scroll">
+        <div class="collection_disp" ng-repeat ="col in collections track by $index"  >
+            <b>Restaurants {{col.collection.title}}</b>
+            <a href="{{col.collection.url}}" target="_blank">
+                <img src=" {{col.collection.image_url}}" style="width: 100%; cursor: pointer" alt="">
+            </a>
+            <br><br>
+        </div>
+    </div>
+</div>
+
+
+
+

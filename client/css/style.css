@@ -1,0 +1,151 @@
+/*style.css*/
+
+body{
+	height: 100%;
+	width: 100%;
+	position: fixed;
+}
+
+/*.talktext{
+  padding: 1em;
+	text-align: left;
+  line-height: 1.5em;
+}
+
+.talk-bubble {
+	margin: 40px;
+  display: inline-block;
+  position: relative;
+	width: 200px;
+	height: auto;
+	background-color: lightyellow;
+}
+
+.tri-right.border.btm-left-in:before {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: 30px;
+  right: auto;
+  top: auto;
+	bottom: -40px;
+	border: 20px solid;
+	border-color: #666 transparent transparent #666;
+}
+.tri-right.btm-left-in:after{
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: 38px;
+  right: auto;
+  top: auto;
+	bottom: -20px;
+	border: 12px solid;
+	border-color: lightyellow transparent transparent lightyellow;
+}*/
+
+/*.msgDiv:before {
+content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: 30px;
+  right: auto;
+  top: auto;
+	bottom: -40px;
+	border: 20px solid;
+	border-color: #666 transparent transparent #666;
+}
+
+.msgDiv:after {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: 38px;
+  right: auto;
+  top: auto;
+	bottom: -20px;
+	border: 12px solid;
+	border-color: lightyellow transparent transparent lightyellow;
+}*/
+
+.collection_disp{
+        text-align: left;
+/*
+    display: inline-block;
+    width:30%;
+    float:left;
+    border:1px solid black;
+*/
+}
+
+.title-box {
+	background: #f39c12;
+	
+}
+.title-box .title {
+		font-family: verdana;
+    font-size: 23px;
+		color: white;
+}
+
+.link_box{
+/*	text-align: right;*/
+	text-align: left;
+	padding: 10px;
+	background: #ffe8c3;
+	border-radius: 10px;
+	float: right;
+	margin-top: 10px;
+	box-shadow: 2px 2px 4px 1px rgb(173, 173, 173);
+    max-width: 80vw;
+    min-width: 60%;
+}
+
+.hi_msg{
+	text-align: right;
+	padding: 10px;
+	text-align: right;
+	padding: 10px;
+	background: white;
+	border-radius: 10px;
+	width: 80%;
+	float: right;
+	margin-top: 10px;
+	margin-right: 15px;
+}
+
+.msgDiv{
+	text-align: left;
+	padding: 10px;
+	background: white;
+	border-radius: 10px;
+	/*width: 80%;*/
+	float: left;
+	margin-top: 10px;
+	box-shadow: 2px 2px 4px 1px rgba(173, 173, 173, 0.67);
+        min-width: 50%;
+}
+
+#chatInput{
+	background: #f0f0f0 !important;
+}
+
+.chat-btn{
+	/*width: 100px;
+	margin-bottom: 10px;
+	float: right;*/
+
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+#chatArea{
+	padding: 12px;
+	height: 100%;
+	margin: 0px;
+	overflow:auto;
+}
