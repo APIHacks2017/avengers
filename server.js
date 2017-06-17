@@ -125,7 +125,48 @@ io.on('connection', function (socket) {
                     console.log('result ------ ', data2);
                     io.emit('chat-resp', {input: data['msg'], output: data2.hourly_forecast, type: conv_type});
                 });
+            } else if(conv_type == 6) {
+                console.log('input: ', inp_chat_str);
+                var args = {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'x-Gateway-APIKey': 'd2bf230a-5e06-4ea9-95cf-85e45d3fcdd6'
+                    }
+                };
+                RestClient.get('http://52.36.211.72:5555/gateway/Chennai/v1/train/routes', args, function (data, response) {
+                    console.log('route no: ------ ', data.slice(5,15));
+                    io.emit('chat-resp', {input: data['msg'], output: data, type: conv_type});
+                });
             }
+            else if(conv_type == 5) {
+                var args = {
+                    parameters: { author: 'lee child'},
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'x-Gateway-APIKey': '8bef4dc3-c39c-47e6-8fb7-0ba75a40525d'
+                    }
+                };
+                RestClient.get('http://52.36.211.72:5555/gateway/Books%20API/3.0.0/reviews.json', args, function (data2, response) {
+                    console.log('result ------ ', data2);
+                    io.emit('chat-resp', {input: data['msg'], output: data2.results, type: conv_type});
+                });
+            }
+            
+            else if(conv_type == 7) {
+                var args = {
+                    
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'x-Gateway-APIKey': '8bef4dc3-c39c-47e6-8fb7-0ba75a40525d'
+                    }
+                };
+                RestClient.get('http://52.36.211.72:5555/gateway/XKCD/1/info.0.json', args, function (data2, response) {
+                    console.log('result ------ ', data2);
+                    io.emit('chat-resp', {input: data['msg'], output: data2, type: conv_type});
+                });
+            }
+            
+            
             else{
                 io.emit('chat-resp', {input: data['msg'], output: resp.result.fulfillment.speech});   
             }

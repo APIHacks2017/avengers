@@ -1,0 +1,20 @@
+<div class='link_box'>
+    <div style="max-height: 40vh; overflow: scroll">
+        <div class="collection_disp" ng-repeat ="col in booklist track by $index"  >
+            
+            
+            <a href="{{col.url}}" target="_blank">
+                <b>{{col.book_title}}</b>
+            </a>
+            <br>
+            <div>
+                {{col.summary}}
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>
+
+
+
+

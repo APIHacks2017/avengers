@@ -49,24 +49,50 @@ myApp.controller('cntrl', function ($scope, $http, $interval, $timeout,$compile)
             // RESTAURANTS
             $scope.collections = data.output;
             $("#chatArea").append($compile("<collectionlist val='"+$scope.collections+"' />")($scope));
+            var elem = document.getElementById('chatArea');
+            elem.scrollTop = elem.scrollHeight;
         } else if (type == 3) {
             //FOR NEWS
             $scope.news = data.output["articles"].slice(0, 4);;
             $("#chatArea").append($compile("<newslist val='"+$scope.news+"' />")($scope));
-
+            var elem = document.getElementById('chatArea');
+            elem.scrollTop = elem.scrollHeight;
         } else if (type == 4) {
             //WEATHER
             console.log('weather: ', data);
             $scope.waetherHourlyList = data.output;
             $("#chatArea").append($compile("<weatherreport val='"+$scope.waetherHourlyList+"' />")($scope));
-
+            var elem = document.getElementById('chatArea');
+            elem.scrollTop = elem.scrollHeight;
         } else if (type == 5) {
+            // books
+            console.log(data);
+            $scope.booklist = data.output;
+            $("#chatArea").append($compile("<booklist val='"+$scope.booklist+"' />")($scope));
+            
+           
+        } else if (type == 6) {
+            //ROutes
+            console.log('train: ', data);
+            $scope.routes = data.output;
+            $("#chatArea").append($compile("<trainroutes val='"+$scope.routes+"' />")($scope));
+            var elem = document.getElementById('chatArea');
+            elem.scrollTop = elem.scrollHeight;
 
+        } else if (type == 7) {
+            // comics
+            console.log(data);
+            $scope.comiclist = []; 
+                $scope.comiclist[0] = data.output;
+            $("#chatArea").append($compile("<comic val='"+$scope.comiclist+"' />")($scope));
+            
            
         } else {
             console.log('data:', data);
             $scope.out = data.output;
             $("#chatArea").append($compile("<sample val='"+$scope.out+"' />")($scope));
+            var elem = document.getElementById('chatArea');
+            elem.scrollTop = elem.scrollHeight;
             // $("#chatArea").append("<div class='link_box' >Type @banker to start </div><br><br>");
             // $("#sendButton").click();
         }
@@ -86,6 +112,8 @@ myApp.controller('cntrl', function ($scope, $http, $interval, $timeout,$compile)
             msg: '' + $("#chatInput").val()
         });
         $("#chatArea").append("<div class='msgDiv'>" + $("#chatInput").val() + "</div><br><br>");
+        var elem = document.getElementById('chatArea');
+        elem.scrollTop = elem.scrollHeight;
         $("#chatInput").val("");
     });
 
@@ -98,6 +126,8 @@ myApp.controller('cntrl', function ($scope, $http, $interval, $timeout,$compile)
                 msg: '' + $("#chatInput").val()
             });
             $("#chatArea").append("<div class='msgDiv'>" + $("#chatInput").val() + "</div><br><br>");
+            var elem = document.getElementById('chatArea');
+            elem.scrollTop = elem.scrollHeight;
             $("#chatInput").val("");
         }
         //115
@@ -149,6 +179,19 @@ myApp.directive('weatherreport', function ($compile) {
         }
     };
 });
+myApp.directive('trainroutes', function ($compile) {
+    return {
+        restrict: 'E',
+        scope: true,
+        replace: true,
+        templateUrl: 'html/train-routes.html',
+        link: function (scope, elem, attrs) {
+            // do stuff
+            scope.tAttrs = attrs;
+        }
+    };
+});
+
 
 
 
@@ -158,6 +201,40 @@ myApp.directive('newslist', function ($compile) {
         scope: true,
         replace: true,
         templateUrl: 'html/newslist.html',
+        link: function (scope, elem, attrs) {
+            // do stuff
+            scope.tAttrs = attrs;
+          
+
+        }
+    };
+
+
+});
+
+myApp.directive('booklist', function ($compile) {
+    return {
+        restrict: 'E',
+        scope: true,
+        replace: true,
+        templateUrl: 'html/booklist.html',
+        link: function (scope, elem, attrs) {
+            // do stuff
+            scope.tAttrs = attrs;
+          
+
+        }
+    };
+
+
+});
+
+myApp.directive('comic', function ($compile) {
+    return {
+        restrict: 'E',
+        scope: true,
+        replace: true,
+        templateUrl: 'html/comic.html',
         link: function (scope, elem, attrs) {
             // do stuff
             scope.tAttrs = attrs;
