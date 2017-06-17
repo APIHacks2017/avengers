@@ -50,26 +50,36 @@ myApp.controller('cntrl', function ($scope, $http, $interval, $timeout,$compile)
             $scope.collections = data.output;
             $("#chatArea").append($compile("<collectionlist val='"+$scope.collections+"' />")($scope));
             var elem = document.getElementById('chatArea');
-            elem.scrollTop = elem.scrollHeight;
+            $timeout( function(){
+                elem.scrollTop = elem.scrollHeight;
+            }, 1000 );
+            
         } else if (type == 3) {
             //FOR NEWS
             $scope.news = data.output["articles"].slice(0, 4);;
             $("#chatArea").append($compile("<newslist val='"+$scope.news+"' />")($scope));
             var elem = document.getElementById('chatArea');
-            elem.scrollTop = elem.scrollHeight;
+            $timeout( function(){
+                elem.scrollTop = elem.scrollHeight;
+            }, 1000 );
         } else if (type == 4) {
             //WEATHER
             console.log('weather: ', data);
             $scope.waetherHourlyList = data.output;
             $("#chatArea").append($compile("<weatherreport val='"+$scope.waetherHourlyList+"' />")($scope));
             var elem = document.getElementById('chatArea');
-            elem.scrollTop = elem.scrollHeight;
+            $timeout( function(){
+                elem.scrollTop = elem.scrollHeight;
+            }, 1000 );
         } else if (type == 5) {
             // books
             console.log(data);
             $scope.booklist = data.output;
             $("#chatArea").append($compile("<booklist val='"+$scope.booklist+"' />")($scope));
-            
+            var elem = document.getElementById('chatArea');
+            $timeout( function(){
+                elem.scrollTop = elem.scrollHeight;
+            }, 1000 );
            
         } else if (type == 6) {
             //ROutes
@@ -77,7 +87,9 @@ myApp.controller('cntrl', function ($scope, $http, $interval, $timeout,$compile)
             $scope.routes = data.output;
             $("#chatArea").append($compile("<trainroutes val='"+$scope.routes+"' />")($scope));
             var elem = document.getElementById('chatArea');
-            elem.scrollTop = elem.scrollHeight;
+            $timeout( function(){
+                elem.scrollTop = elem.scrollHeight;
+            }, 1000 );
 
         } else if (type == 7) {
             // comics
@@ -85,14 +97,19 @@ myApp.controller('cntrl', function ($scope, $http, $interval, $timeout,$compile)
             $scope.comiclist = []; 
                 $scope.comiclist[0] = data.output;
             $("#chatArea").append($compile("<comic val='"+$scope.comiclist+"' />")($scope));
-            
+            var elem = document.getElementById('chatArea');
+            $timeout( function(){
+                elem.scrollTop = elem.scrollHeight;
+            }, 1000 ); 
            
         } else {
             console.log('data:', data);
             $scope.out = data.output;
             $("#chatArea").append($compile("<sample val='"+$scope.out+"' />")($scope));
             var elem = document.getElementById('chatArea');
-            elem.scrollTop = elem.scrollHeight;
+            $timeout( function(){
+                elem.scrollTop = elem.scrollHeight;
+            }, 1000);
             // $("#chatArea").append("<div class='link_box' >Type @banker to start </div><br><br>");
             // $("#sendButton").click();
         }
